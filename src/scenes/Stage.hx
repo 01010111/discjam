@@ -30,7 +30,7 @@ class Stage extends Scene {
 		addChild(new Backdrop());
 		addChild(floor = cast new DiscFloor());
 		addEventListener(MouseEvent.MOUSE_WHEEL, (e) -> floor.target_rotation += e.delta.sign_of() * 15);
-		addEventListener(TouchEvent.TOUCH_MOVE, (e) -> {
+		addEventListener(TouchEvent.TOUCH_BEGIN, (e) -> {
 			var p = new Point(e.localX, e.localY);
 			p = (cast e.target:Sprite).localToGlobal(p);
 			touch_last = p.y;

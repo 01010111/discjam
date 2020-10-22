@@ -892,7 +892,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "1";
+	app.meta.h["build"] = "2";
 	app.meta.h["company"] = "Company Name";
 	app.meta.h["file"] = "Discroom";
 	app.meta.h["name"] = "Discroom";
@@ -72205,7 +72205,7 @@ var scenes_Stage = function() {
 		var n = e.delta;
 		_gthis.floor.target_rotation += (n > 0 ? 1 : n < 0 ? -1 : 0) * 15;
 	});
-	this.addEventListener("touchMove",function(e) {
+	this.addEventListener("touchBegin",function(e) {
 		var p = new openfl_geom_Point(e.localX,e.localY);
 		p = e.target.localToGlobal(p);
 		_gthis.touch_last = p.y;
