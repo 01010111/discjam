@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="Discroom" package="com.sample.discroom" version="1.0.0" company="Company Name" />
+	<app main="Main" path="export" file="Discroom" />
+	<window fps="60" resizeable="true" />
+	
+	<source path="src" />
+	<source path="zerolib-openfl" />
+	
+	<haxelib name="openfl" />
+	<haxelib name="zerolib" />
+	
+	<assets path="assets" />
+
+	<postbuild cmd="xcopy /s /y .\export\html5\bin\* .\docs" if="html5" />
+	
+</project>
