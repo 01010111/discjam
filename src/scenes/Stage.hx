@@ -1,5 +1,8 @@
 package scenes;
 
+import openfl.display.Sprite;
+import openfl.geom.Point;
+import openfl.events.TouchEvent;
 import filters.OutlineShader;
 import zero.openfl.utilities.Game;
 import zero.utilities.Color;
@@ -20,12 +23,24 @@ class Stage extends Scene {
 	var floor:DiscFloor;
 	var time:TextField;
 	var accumulator:Float = 0;
+	var touch_last:Float;
 
 	public function new() {
 		super();
 		addChild(new Backdrop());
 		addChild(floor = cast new DiscFloor());
 		addEventListener(MouseEvent.MOUSE_WHEEL, (e) -> floor.target_rotation += e.delta.sign_of() * 15);
+		addEventListener(TouchEvent.TOUCH_MOVE, (e) -> {
+			var p = new Point(e.localX, e.localY);
+			p = (cast e.target:Sprite).localToGlobal(p);
+			touch_last = p.y;
+		});
+		addEventListener(TouchEvent.TOUCH_MOVE, (e) -> {
+			var p = new Point(e.localX, e.localY);
+			p = (cast e.target:Sprite).localToGlobal(p);
+			floor.target_rotation += (touch_last - p.y)/2;
+			touch_last = p.y;
+		});
 		var spawner = new DiscSpawner(this);
 		Timer.get(2, spawner.fire);
 
@@ -40,7 +55,6 @@ class Stage extends Scene {
 	}
 
 	function update(?dt:Float) {
-		trace(dt);
 		var s = format_time(accumulator += dt.min(2/60));
 		time.set_string(s).set_position(Game.width/2, 64, TOP_CENTER);
 	}
@@ -52,7 +66,6 @@ class Stage extends Scene {
 		if (ms == null || ms.length == 0) ms = '000';
 		if (sec.length == 1) sec = '0$sec';
 		while (ms.length < 3) ms += '0';
-		trace(min,sec,ms);
 		return '$min:$sec:$ms';
 	}
 

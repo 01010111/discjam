@@ -892,7 +892,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "69";
+	app.meta.h["build"] = "1";
 	app.meta.h["company"] = "Company Name";
 	app.meta.h["file"] = "Discroom";
 	app.meta.h["name"] = "Discroom";
@@ -27181,7 +27181,6 @@ objects_Disc.prototype = $extend(objects_DiscObject.prototype,{
 		return out;
 	}
 	,kill: function() {
-		haxe_Log.trace("killing disc",{ fileName : "src/objects/Disc.hx", lineNumber : 54, className : "objects.Disc", methodName : "kill"});
 		this.set_visible(false);
 		HxOverrides.remove(this.spawner.active,this);
 		this.spawner.pool.push(this);
@@ -72206,6 +72205,17 @@ var scenes_Stage = function() {
 		var n = e.delta;
 		_gthis.floor.target_rotation += (n > 0 ? 1 : n < 0 ? -1 : 0) * 15;
 	});
+	this.addEventListener("touchMove",function(e) {
+		var p = new openfl_geom_Point(e.localX,e.localY);
+		p = e.target.localToGlobal(p);
+		_gthis.touch_last = p.y;
+	});
+	this.addEventListener("touchMove",function(e) {
+		var p = new openfl_geom_Point(e.localX,e.localY);
+		p = e.target.localToGlobal(p);
+		_gthis.floor.target_rotation += (_gthis.touch_last - p.y) / 2;
+		_gthis.touch_last = p.y;
+	});
 	var spawner = new util_DiscSpawner(this);
 	zero_utilities_Timer.get(2,$bind(spawner,spawner.fire));
 	this.time = zero_openfl_extensions_TextTools.format(new openfl_text_TextField(),{ font : "Myfont Regular", size : 48, color : zero_utilities_Color.PICO_8_ORANGE});
@@ -72220,8 +72230,8 @@ scenes_Stage.prototype = $extend(zero_openfl_utilities_Scene.prototype,{
 	floor: null
 	,time: null
 	,accumulator: null
+	,touch_last: null
 	,update: function(dt) {
-		haxe_Log.trace(dt,{ fileName : "src/scenes/Stage.hx", lineNumber : 43, className : "scenes.Stage", methodName : "update"});
 		var s = this;
 		var s1 = this.format_time(s.accumulator += Math.min(dt,0.033333333333333333));
 		zero_openfl_extensions_TextTools.set_position(zero_openfl_extensions_TextTools.set_string(this.time,s1),zero_openfl_utilities_Game.get_width() / 2,64,zero_utilities_Anchor.TOP_CENTER);
@@ -72237,7 +72247,6 @@ scenes_Stage.prototype = $extend(zero_openfl_utilities_Scene.prototype,{
 			sec = "0" + sec;
 		}
 		while(ms.length < 3) ms += "0";
-		haxe_Log.trace(min,{ fileName : "src/scenes/Stage.hx", lineNumber : 55, className : "scenes.Stage", methodName : "format_time", customParams : [sec,ms]});
 		return "" + min + ":" + sec + ":" + ms;
 	}
 	,__class__: scenes_Stage

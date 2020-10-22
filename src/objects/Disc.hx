@@ -51,7 +51,6 @@ class Disc extends DiscObject {
 	}
 
 	function kill() {
-		trace('killing disc');
 		visible = false;
 		spawner.active.remove(this);
 		spawner.pool.push(this);
