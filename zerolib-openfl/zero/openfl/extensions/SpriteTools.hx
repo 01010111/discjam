@@ -1,5 +1,6 @@
 package zero.openfl.extensions;
 
+import openfl.display.BitmapData;
 import zero.openfl.utilities.Game;
 import openfl.display.Bitmap;
 import openfl.display.DisplayObject;
@@ -8,6 +9,8 @@ import openfl.Assets;
 import zero.utilities.Color;
 import zero.utilities.Vec2;
 import zero.utilities.Anchor;
+
+using Math;
 
 class SpriteTools {
 

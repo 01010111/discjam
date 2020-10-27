@@ -22,6 +22,7 @@ class Main extends Sprite
 		super();
 		new Game(this, scenes.Stage);
 		stage.addEventListener(Event.RESIZE, (e) -> 'resize'.dispatch(e));
+		stage.addEventListener(Event.ENTER_FRAME, (e) -> 'preupdate'.dispatch({}));
 		stage.addEventListener(Event.ENTER_FRAME, util.UpdateManager.update);
 	}
 }

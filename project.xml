@@ -3,7 +3,7 @@
 	
 	<meta title="Discroom" package="com.sample.discroom" version="1.0.0" company="Company Name" />
 	<app main="Main" path="export" file="Discroom" />
-	<window fps="60" resizeable="true" />
+	<window fps="60" width="1280" height="720" resizeable="false" />
 	
 	<source path="src" />
 	<source path="zerolib-openfl" />

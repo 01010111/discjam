@@ -22,7 +22,7 @@
 -D web
 --remap flash:openfl
 --connect
-6001
+6000
 -js export/html5/bin/Discroom.js
 -cp export/html5/haxe
 -D html5

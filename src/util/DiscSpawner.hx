@@ -1,7 +1,7 @@
 package util;
 
+import scenes.Stage;
 import zero.utilities.Timer;
-import zero.openfl.utilities.Scene;
 import objects.Disc;
 import zero.utilities.Vec2;
 import zero.openfl.utilities.Game;
@@ -17,10 +17,11 @@ class DiscSpawner {
 	public var pool:Array<Disc> = [];
 	public var radius:Float;
 
-	var scene:Scene;
+	var scene:Stage;
 	var period:Float = 2;
+	var rest_period:Int = 0;
 
-	public function new(scene:Scene) {
+	public function new(scene:Stage) {
 		resize.listen('resize');
 		resize();
 		this.scene = scene;
@@ -30,7 +31,13 @@ class DiscSpawner {
 		radius = (Game.width/2 * Game.width/2 + Game.height/2 * Game.height/2).sqrt();
 	}
 
+	public function begin() {
+		period = 2;
+		Timer.get(2, fire);
+	}
+
 	public function fire() {
+		if (!scene.playing) return;
 		var angle = 360.get_random();
 		var pos = Vec2.get(1, 0);
 		pos.length = radius;
@@ -42,13 +49,14 @@ class DiscSpawner {
 		disc.fire(pos.x, pos.y, angle + 15.get_random(-15) + 180, 500);
 		pos.put();
 
-		Timer.get((period *= 0.98).max(0.2), fire);
+		var rest = rest_period++ % 3 == 0 ? 0.5 : 0;
+		Timer.get((period *= 0.95).max(0.2) + rest, fire);
 	}
 
 	function get_disc() {
 		if (pool.length > 0) return pool.shift();
 		var disc = new Disc(this);
-		scene.add(disc);
+		scene.discs.add(disc);
 		return disc;
 	}
 
