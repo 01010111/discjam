@@ -892,7 +892,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "3";
+	app.meta.h["build"] = "4";
 	app.meta.h["company"] = "Company Name";
 	app.meta.h["file"] = "Discroom";
 	app.meta.h["name"] = "Discroom";
@@ -4717,7 +4717,7 @@ ManifestResources.init = function(config) {
 	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$assets_$disc_$numbers_$alt_$regular_$ttf);
 	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$assets_$disc_$text_$regular_$ttf);
 	var bundle;
-	var data = "{\"name\":null,\"assets\":\"aoy4:pathy21:assets%2Fa_bottom.pngy4:sizei693y4:typey5:IMAGEy2:idR1y7:preloadtgoR0y18:assets%2Fa_top.pngR2i553R3R4R5R7R6tgoR0y15:assets%2Fbg.pngR2i224842R3R4R5R8R6tgoR0y20:assets%2Fblood_0.pngR2i3209R3R4R5R9R6tgoR0y20:assets%2Fblood_1.pngR2i3084R3R4R5R10R6tgoR0y20:assets%2Fblood_2.pngR2i3252R3R4R5R11R6tgoR0y20:assets%2Fblood_3.pngR2i3282R3R4R5R12R6tgoR0y17:assets%2Fdisc.pngR2i4580R3R4R5R13R6tgoR0y24:assets%2Fdisc_bloody.pngR2i7298R3R4R5R14R6tgoR0y23:assets%2Fdisc_floor.pngR2i28214R3R4R5R15R6tgoR0y21:assets%2Fdisc_man.pngR2i804R3R4R5R16R6tgoR0y26:assets%2Fdisc_man_dead.pngR2i585R3R4R5R17R6tgoR0y28:assets%2Fdisc_man_shadow.pngR2i299R3R4R5R18R6tgoR0y27:assets%2Fdisc_man_sheet.pngR2i2938R3R4R5R19R6tgoR2i4208R3y4:FONTy9:classNamey40:__ASSET__assets_disc_numbers_regular_ttfR5y33:assets%2FDisc_numbers-Regular.ttfR6tgoR2i3684R3R20R21y44:__ASSET__assets_disc_numbers_alt_regular_ttfR5y37:assets%2FDisc_numbers_alt-Regular.ttfR6tgoR2i10828R3R20R21y37:__ASSET__assets_disc_text_regular_ttfR5y30:assets%2FDisc_text-Regular.ttfR6tgoR0y21:assets%2Fl_bottom.pngR2i703R3R4R5R28R6tgoR0y18:assets%2Fl_top.pngR2i415R3R4R5R29R6tgoR0y22:assets%2Fmenu_disc.pngR2i2083R3R4R5R30R6tgoR0y16:assets%2Fpeg.pngR2i3460R3R4R5R31R6tgoR0y21:assets%2Fp_bottom.pngR2i895R3R4R5R32R6tgoR0y18:assets%2Fp_top.pngR2i560R3R4R5R33R6tgoR0y23:assets%2Fscrew_hole.pngR2i227R3R4R5R34R6tgoR0y18:assets%2Ftitle.pngR2i3279R3R4R5R35R6tgoR0y21:assets%2Fy_bottom.pngR2i949R3R4R5R36R6tgoR0y18:assets%2Fy_top.pngR2i534R3R4R5R37R6tgh\",\"rootPath\":null,\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
+	var data = "{\"name\":null,\"assets\":\"aoy4:pathy21:assets%2Fa_bottom.pngy4:sizei693y4:typey5:IMAGEy2:idR1y7:preloadtgoR0y18:assets%2Fa_top.pngR2i553R3R4R5R7R6tgoR0y15:assets%2Fbg.pngR2i224842R3R4R5R8R6tgoR0y20:assets%2Fblood_0.pngR2i3209R3R4R5R9R6tgoR0y20:assets%2Fblood_1.pngR2i3084R3R4R5R10R6tgoR0y20:assets%2Fblood_2.pngR2i3252R3R4R5R11R6tgoR0y20:assets%2Fblood_3.pngR2i3282R3R4R5R12R6tgoR0y17:assets%2Fdisc.pngR2i4580R3R4R5R13R6tgoR0y24:assets%2Fdisc_bloody.pngR2i7298R3R4R5R14R6tgoR0y23:assets%2Fdisc_floor.pngR2i28214R3R4R5R15R6tgoR0y21:assets%2Fdisc_man.pngR2i804R3R4R5R16R6tgoR0y26:assets%2Fdisc_man_dead.pngR2i585R3R4R5R17R6tgoR0y28:assets%2Fdisc_man_shadow.pngR2i299R3R4R5R18R6tgoR0y27:assets%2Fdisc_man_sheet.pngR2i2938R3R4R5R19R6tgoR2i4208R3y4:FONTy9:classNamey40:__ASSET__assets_disc_numbers_regular_ttfR5y33:assets%2FDisc_numbers-Regular.ttfR6tgoR2i3684R3R20R21y44:__ASSET__assets_disc_numbers_alt_regular_ttfR5y37:assets%2FDisc_numbers_alt-Regular.ttfR6tgoR2i10828R3R20R21y37:__ASSET__assets_disc_text_regular_ttfR5y30:assets%2FDisc_text-Regular.ttfR6tgoR0y21:assets%2Fl_bottom.pngR2i703R3R4R5R28R6tgoR0y18:assets%2Fl_top.pngR2i415R3R4R5R29R6tgoR0y22:assets%2Fmenu_disc.pngR2i2083R3R4R5R30R6tgoR2i1366169R3y5:MUSICR5y18:assets%2Fmusic.mp3y9:pathGroupaR32hR6tgoR0y16:assets%2Fpeg.pngR2i3460R3R4R5R34R6tgoR0y21:assets%2Fp_bottom.pngR2i895R3R4R5R35R6tgoR0y18:assets%2Fp_top.pngR2i560R3R4R5R36R6tgoR0y23:assets%2Fscrew_hole.pngR2i227R3R4R5R37R6tgoR0y18:assets%2Ftitle.pngR2i3279R3R4R5R38R6tgoR0y21:assets%2Fy_bottom.pngR2i949R3R4R5R39R6tgoR0y18:assets%2Fy_top.pngR2i534R3R4R5R40R6tgh\",\"rootPath\":null,\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
 	var manifest = lime_utils_AssetManifest.parse(data,ManifestResources.rootPath);
 	var library = lime_utils_AssetLibrary.fromManifest(manifest);
 	lime_utils_Assets.registerLibrary("default",library);
@@ -75086,6 +75086,7 @@ zero_openfl_utilities_Scene.prototype = $extend(openfl_display_Sprite.prototype,
 });
 var scenes_Stage = function() {
 	this.playing = false;
+	this.music_rate = 1;
 	this.new_record = false;
 	this.touch_last = zero_utilities_Vec2.get();
 	this.accumulator = 0;
@@ -75118,6 +75119,16 @@ scenes_Stage.prototype = $extend(zero_openfl_utilities_Scene.prototype,{
 	,last: null
 	,new_record: null
 	,blood: null
+	,music: null
+	,music_id: null
+	,music_rate: null
+	,set_music_rate: function(v) {
+		if(this.music == null) {
+			return v;
+		}
+		this.music.rate(v,this.music_id);
+		return v;
+	}
 	,playing: null
 	,discs: null
 	,init_controls: function() {
@@ -75210,6 +75221,14 @@ scenes_Stage.prototype = $extend(zero_openfl_utilities_Scene.prototype,{
 		});
 		this.accumulator = 0;
 		this.update_timer(0);
+		if(this.music == null) {
+			this.music = new Howl({ src : ["assets/music.mp3"], loop : true});
+			this.music_id = this.music.play(0);
+			this.music.volume(0.6);
+		} else {
+			this.music.fade(0.05,0.6,250,this.music_id);
+			zero_utilities_Tween.get(this).from_to("music_rate",0.5,1).duration(0.25);
+		}
 	}
 	,update: function(dt) {
 		this.update_timer(dt);
@@ -75330,6 +75349,8 @@ scenes_Stage.prototype = $extend(zero_openfl_utilities_Scene.prototype,{
 			util_GameState.best = this.accumulator;
 			this.new_record = true;
 		}
+		this.music.fade(0.6,0.1,250,this.music_id);
+		zero_utilities_Tween.get(this).from_to("music_rate",1,0.5).duration(0.25);
 		this.last.set_text(this.format_time(this.accumulator));
 		this.update_best();
 		this.prompt.reset();
@@ -75450,6 +75471,7 @@ scenes_Stage.prototype = $extend(zero_openfl_utilities_Scene.prototype,{
 		}
 	}
 	,__class__: scenes_Stage
+	,__properties__: $extend(zero_openfl_utilities_Scene.prototype.__properties__,{set_music_rate:"set_music_rate"})
 });
 var ui_BestTime = function() {
 	openfl_display_Sprite.call(this);

@@ -1,5 +1,12 @@
 package scenes;
 
+import zero.utilities.Tween;
+import lime.media.howlerjs.Howl;
+import openfl.media.SoundMixer;
+import openfl.media.SoundChannel;
+import openfl.media.SoundTransform;
+import openfl.Assets;
+import openfl.media.Sound;
 import ui.LastTime;
 import util.GameState;
 import ui.BestTime;
@@ -40,6 +47,15 @@ class Stage extends Scene {
 	var last:LastTime;
 	var new_record:Bool = false;
 	var blood:Blood;
+	var music:Howl;
+	var music_id:Int;
+	var music_rate(default, set):Float = 1;
+
+	function set_music_rate(v:Float) {
+		if (music == null) return v;
+		music.rate(v, music_id);
+		return v;
+	}
 
 	public var playing:Bool = false;
 
@@ -132,6 +148,18 @@ class Stage extends Scene {
 		});
 		accumulator = 0;
 		update_timer(0);
+		if (music == null) {
+			music = new Howl({
+				src: [ 'assets/music.mp3' ],
+				loop: true,
+			});
+			music_id = music.play(0);
+			music.volume(0.6);
+		}
+		else {
+			music.fade(0.05, 0.6, 250, music_id);
+			Tween.get(this).from_to('music_rate', 0.5, 1).duration(0.25);
+		}
 	}
 
 	function update(?dt:Float) {
@@ -195,6 +223,8 @@ class Stage extends Scene {
 			GameState.best = accumulator;
 			new_record = true;
 		}
+		music.fade(0.6, 0.1, 250, music_id);
+		Tween.get(this).from_to('music_rate', 1, 0.5).duration(0.25);
 		last.set_text(format_time(accumulator));
 		update_best();
 		prompt.reset();
