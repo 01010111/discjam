@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
 	
-	<meta title="Discroom" package="com.sample.discroom" version="1.0.0" company="Company Name" />
+	<meta title="discwheel" package="com.zeroone.discroom" version="1.0.0" company="01010111" />
 	<app main="Main" path="export" file="Discroom" />
 	<window fps="60" width="1280" height="720" resizeable="false" />
 	
@@ -14,5 +14,6 @@
 	<assets path="assets" />
 
 	<postbuild cmd="xcopy /s /y .\export\html5\bin\* .\docs" if="html5" />
+	<icon path="assets/icon.png" />
 	
 </project>

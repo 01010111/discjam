@@ -1,5 +1,6 @@
 package objects;
 
+import lime.media.howlerjs.Howl;
 import openfl.display.Sprite;
 import zero.utilities.Rect;
 import zero.openfl.utilities.Game;
@@ -8,6 +9,7 @@ import zero.utilities.Vec2;
 
 using zero.openfl.extensions.SpriteTools;
 using zero.utilities.EventBus;
+using zero.extensions.Tools;
 
 class Disc extends DiscObject {
 
@@ -16,6 +18,7 @@ class Disc extends DiscObject {
 	var spawner:DiscSpawner;
 	var last_onscreen:Bool = false;
 	var blood:Sprite;
+	var spawn:Howl = new Howl({ src: [ 'assets/disc_spawn.mp3' ], volume: 0.2 });
 
 	public function new(spawner:DiscSpawner) {
 		super(48);
@@ -49,6 +52,11 @@ class Disc extends DiscObject {
 
 		var is_on_screen = on_screen();
 		if (!is_on_screen && last_onscreen) kill();
+		if (is_on_screen && !last_onscreen) {
+			var id = spawn.play();
+			spawn.pos(x.map(0, 1280, -0.1, 0.1), y.map(0, 720, -0.1, 0.1));
+			spawn.rate(1.5.get_random(1), id);
+		}
 		last_onscreen = is_on_screen;
 
 		#if debug
@@ -57,10 +65,11 @@ class Disc extends DiscObject {
 	}
 
 	function on_screen():Bool {
-		var screen = Rect.get(0, 0, Game.width, Game.height);
+		var screen = Rect.get(-radius, -radius, Game.width + radius * 2, Game.height + radius * 2);
 		var center = Vec2.get(Game.width/2, Game.height/2);
 		var pos = Vec2.get(x, y);
-		var out = center.distance(pos) < center.length + radius;
+		//var out = center.distance(pos) < center.length + radius;
+		var out = screen.contains_point(pos);
 		center.put();
 		pos.put();
 		return out;

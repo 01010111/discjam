@@ -20,7 +20,7 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
-		new Game(this, scenes.Stage);
+		new Game(this, scenes.Title);
 		stage.addEventListener(Event.RESIZE, (e) -> 'resize'.dispatch(e));
 		stage.addEventListener(Event.ENTER_FRAME, (e) -> 'preupdate'.dispatch({}));
 		stage.addEventListener(Event.ENTER_FRAME, util.UpdateManager.update);

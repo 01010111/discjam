@@ -1,5 +1,6 @@
 package scenes;
 
+import ui.Transition;
 import zero.utilities.Tween;
 import lime.media.howlerjs.Howl;
 import openfl.media.SoundMixer;
@@ -50,6 +51,9 @@ class Stage extends Scene {
 	var music:Howl;
 	var music_id:Int;
 	var music_rate(default, set):Float = 1;
+	var metal_hit:Howl = new Howl({ src: [ 'assets/metal_hit.mp3' ], volume: 0.4 });
+	var body_hit:Howl = new Howl({ src: [ 'assets/body_hit.mp3' ], volume: 1 });
+	var start_sound:Howl = new Howl({ src: [ 'assets/disc_spawn.mp3' ], volume: 0.25 });
 
 	function set_music_rate(v:Float) {
 		if (music == null) return v;
@@ -76,9 +80,18 @@ class Stage extends Scene {
 		init_timer();
 
 		init_menu();
+		addChild(new Transition());
 
 		#if debug addChild(new util.DebugSprite()); #end
 		update.listen('update');
+
+		music = new Howl({
+			src: [ 'assets/music.mp3' ],
+			loop: true,
+		});
+		music_id = music.play(0);
+		music.rate(0.5, music_id);
+		music.volume(0.75);
 	}
 
 	function init_controls() {
@@ -138,6 +151,7 @@ class Stage extends Scene {
 	}
 
 	function begin() {
+		//start_sound.play();
 		new_record = false;
 		if (prompt.lock) return;
 		floor.add_man();
@@ -154,10 +168,10 @@ class Stage extends Scene {
 				loop: true,
 			});
 			music_id = music.play(0);
-			music.volume(0.6);
+			music.volume(1);
 		}
 		else {
-			music.fade(0.05, 0.6, 250, music_id);
+			music.fade(0.75, 1, 250, music_id);
 			Tween.get(this).from_to('music_rate', 0.5, 1).duration(0.25);
 		}
 	}
@@ -200,6 +214,8 @@ class Stage extends Scene {
 				perp_tan.put();
 				tangent.put();
 				disc.bounced = true;
+				var id = metal_hit.play();
+				metal_hit.rate(1.get_random(0.5), id);
 			}
 			v1.put();
 			v2.put();
@@ -223,7 +239,9 @@ class Stage extends Scene {
 			GameState.best = accumulator;
 			new_record = true;
 		}
-		music.fade(0.6, 0.1, 250, music_id);
+		var id = body_hit.play();
+		body_hit.rate(1.25.get_random(0.75), id);
+		music.fade(1, 0.75, 250, music_id);
 		Tween.get(this).from_to('music_rate', 1, 0.5).duration(0.25);
 		last.set_text(format_time(accumulator));
 		update_best();

@@ -892,13 +892,13 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "6";
-	app.meta.h["company"] = "Company Name";
+	app.meta.h["build"] = "7";
+	app.meta.h["company"] = "01010111";
 	app.meta.h["file"] = "Discroom";
-	app.meta.h["name"] = "Discroom";
-	app.meta.h["packageName"] = "com.sample.discroom";
+	app.meta.h["name"] = "discwheel";
+	app.meta.h["packageName"] = "com.zeroone.discroom";
 	app.meta.h["version"] = "1.0.0";
-	var attributes = { allowHighDPI : false, alwaysOnTop : false, borderless : false, element : null, frameRate : 60, height : 720, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, title : "Discroom", width : 1280, x : null, y : null};
+	var attributes = { allowHighDPI : false, alwaysOnTop : false, borderless : false, element : null, frameRate : 60, height : 720, hidden : false, maximized : false, minimized : false, parameters : { }, resizable : true, title : "discwheel", width : 1280, x : null, y : null};
 	attributes.context = { antialiasing : 0, background : 16777215, colorDepth : 32, depth : true, hardware : true, stencil : true, type : null, vsync : false};
 	if(app.__window == null) {
 		if(config != null) {
@@ -4517,7 +4517,7 @@ openfl_display_Sprite.prototype = $extend(openfl_display_DisplayObjectContainer.
 });
 var Main = function() {
 	openfl_display_Sprite.call(this);
-	new zero_openfl_utilities_Game(this,scenes_Stage);
+	new zero_openfl_utilities_Game(this,scenes_Title);
 	this.stage.addEventListener("resize",function(e) {
 		zero_utilities_EventBus.dispatch("resize",e);
 	});
@@ -4717,7 +4717,7 @@ ManifestResources.init = function(config) {
 	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$assets_$disc_$numbers_$alt_$regular_$ttf);
 	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$assets_$disc_$text_$regular_$ttf);
 	var bundle;
-	var data = "{\"name\":null,\"assets\":\"aoy4:pathy21:assets%2Fa_bottom.pngy4:sizei693y4:typey5:IMAGEy2:idR1y7:preloadtgoR0y18:assets%2Fa_top.pngR2i553R3R4R5R7R6tgoR0y15:assets%2Fbg.pngR2i229147R3R4R5R8R6tgoR0y20:assets%2Fblood_0.pngR2i3209R3R4R5R9R6tgoR0y20:assets%2Fblood_1.pngR2i3084R3R4R5R10R6tgoR0y20:assets%2Fblood_2.pngR2i3252R3R4R5R11R6tgoR0y20:assets%2Fblood_3.pngR2i3282R3R4R5R12R6tgoR0y17:assets%2Fdisc.pngR2i4580R3R4R5R13R6tgoR0y24:assets%2Fdisc_bloody.pngR2i7298R3R4R5R14R6tgoR0y23:assets%2Fdisc_floor.pngR2i28214R3R4R5R15R6tgoR0y21:assets%2Fdisc_man.pngR2i804R3R4R5R16R6tgoR0y26:assets%2Fdisc_man_dead.pngR2i585R3R4R5R17R6tgoR0y28:assets%2Fdisc_man_shadow.pngR2i299R3R4R5R18R6tgoR0y27:assets%2Fdisc_man_sheet.pngR2i2938R3R4R5R19R6tgoR2i4208R3y4:FONTy9:classNamey40:__ASSET__assets_disc_numbers_regular_ttfR5y33:assets%2FDisc_numbers-Regular.ttfR6tgoR2i3684R3R20R21y44:__ASSET__assets_disc_numbers_alt_regular_ttfR5y37:assets%2FDisc_numbers_alt-Regular.ttfR6tgoR2i10828R3R20R21y37:__ASSET__assets_disc_text_regular_ttfR5y30:assets%2FDisc_text-Regular.ttfR6tgoR0y21:assets%2Fl_bottom.pngR2i703R3R4R5R28R6tgoR0y18:assets%2Fl_top.pngR2i415R3R4R5R29R6tgoR0y22:assets%2Fmenu_disc.pngR2i2083R3R4R5R30R6tgoR2i1366169R3y5:MUSICR5y18:assets%2Fmusic.mp3y9:pathGroupaR32hR6tgoR0y16:assets%2Fpeg.pngR2i3460R3R4R5R34R6tgoR0y21:assets%2Fp_bottom.pngR2i895R3R4R5R35R6tgoR0y18:assets%2Fp_top.pngR2i560R3R4R5R36R6tgoR0y23:assets%2Fscrew_hole.pngR2i227R3R4R5R37R6tgoR0y18:assets%2Ftitle.pngR2i3279R3R4R5R38R6tgoR0y21:assets%2Fy_bottom.pngR2i949R3R4R5R39R6tgoR0y18:assets%2Fy_top.pngR2i534R3R4R5R40R6tgh\",\"rootPath\":null,\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
+	var data = "{\"name\":null,\"assets\":\"aoy4:pathy21:assets%2Fa_bottom.pngy4:sizei693y4:typey5:IMAGEy2:idR1y7:preloadtgoR0y18:assets%2Fa_top.pngR2i553R3R4R5R7R6tgoR2i134264R3y5:MUSICR5y18:assets%2Fbegin.mp3y9:pathGroupaR9hR6tgoR0y15:assets%2Fbg.pngR2i229147R3R4R5R11R6tgoR0y20:assets%2Fblood_0.pngR2i3209R3R4R5R12R6tgoR0y20:assets%2Fblood_1.pngR2i3084R3R4R5R13R6tgoR0y20:assets%2Fblood_2.pngR2i3252R3R4R5R14R6tgoR0y20:assets%2Fblood_3.pngR2i3282R3R4R5R15R6tgoR2i28939R3R8R5y21:assets%2Fbody_hit.mp3R10aR16hR6tgoR0y17:assets%2Fdisc.pngR2i4580R3R4R5R17R6tgoR0y24:assets%2Fdisc_bloody.pngR2i7298R3R4R5R18R6tgoR0y23:assets%2Fdisc_floor.pngR2i28214R3R4R5R19R6tgoR0y21:assets%2Fdisc_man.pngR2i804R3R4R5R20R6tgoR0y26:assets%2Fdisc_man_dead.pngR2i585R3R4R5R21R6tgoR0y28:assets%2Fdisc_man_shadow.pngR2i299R3R4R5R22R6tgoR0y27:assets%2Fdisc_man_sheet.pngR2i2938R3R4R5R23R6tgoR2i4208R3y4:FONTy9:classNamey40:__ASSET__assets_disc_numbers_regular_ttfR5y33:assets%2FDisc_numbers-Regular.ttfR6tgoR2i3684R3R24R25y44:__ASSET__assets_disc_numbers_alt_regular_ttfR5y37:assets%2FDisc_numbers_alt-Regular.ttfR6tgoR2i29566R3R8R5y23:assets%2Fdisc_spawn.mp3R10aR30hR6tgoR2i10828R3R24R25y37:__ASSET__assets_disc_text_regular_ttfR5y30:assets%2FDisc_text-Regular.ttfR6tgoR0y17:assets%2Ficon.pngR2i4580R3R4R5R33R6tgoR0y17:assets%2Flogo.pngR2i30789R3R4R5R34R6tgoR0y21:assets%2Fl_bottom.pngR2i703R3R4R5R35R6tgoR0y18:assets%2Fl_top.pngR2i415R3R4R5R36R6tgoR0y22:assets%2Fmenu_disc.pngR2i2083R3R4R5R37R6tgoR2i24550R3R8R5y22:assets%2Fmetal_hit.mp3R10aR38hR6tgoR2i1366169R3R8R5y18:assets%2Fmusic.mp3R10aR39hR6tgoR0y16:assets%2Fpeg.pngR2i3460R3R4R5R40R6tgoR0y21:assets%2Fp_bottom.pngR2i895R3R4R5R41R6tgoR0y18:assets%2Fp_top.pngR2i560R3R4R5R42R6tgoR0y23:assets%2Fscrew_hole.pngR2i227R3R4R5R43R6tgoR0y18:assets%2Ftitle.pngR2i3279R3R4R5R44R6tgoR0y21:assets%2Fy_bottom.pngR2i949R3R4R5R45R6tgoR0y18:assets%2Fy_top.pngR2i534R3R4R5R46R6tgh\",\"rootPath\":null,\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
 	var manifest = lime_utils_AssetManifest.parse(data,ManifestResources.rootPath);
 	var library = lime_utils_AssetLibrary.fromManifest(manifest);
 	lime_utils_Assets.registerLibrary("default",library);
@@ -25182,7 +25182,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 807031;
+	this.version = 632782;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
@@ -27640,6 +27640,7 @@ objects_DiscObject.prototype = $extend(openfl_display_Sprite.prototype,{
 	,__class__: objects_DiscObject
 });
 var objects_Disc = function(spawner) {
+	this.spawn = new Howl({ src : ["assets/disc_spawn.mp3"], volume : 0.2});
 	this.last_onscreen = false;
 	this.velocity = zero_utilities_Vec2.get(1,0);
 	objects_DiscObject.call(this,48);
@@ -27658,6 +27659,7 @@ objects_Disc.prototype = $extend(objects_DiscObject.prototype,{
 	,spawner: null
 	,last_onscreen: null
 	,blood: null
+	,spawn: null
 	,fire: function(x,y,a,s) {
 		this.set_visible(true);
 		this.last_onscreen = false;
@@ -27719,14 +27721,26 @@ objects_Disc.prototype = $extend(objects_DiscObject.prototype,{
 		if(!is_on_screen && this.last_onscreen) {
 			this.kill();
 		}
+		if(is_on_screen && !this.last_onscreen) {
+			var id = this.spawn.play();
+			var tmp = this.spawn;
+			var t1 = this.get_x() / 1280;
+			var t11 = this.get_y() / 720;
+			tmp.pos((1 - t1) * -0.1 + t1 * 0.1,(1 - t11) * -0.1 + t11 * 0.1);
+			var min = 1;
+			var max = null;
+			if(min == null) {
+				min = 0;
+			}
+			this.spawn.rate(min + Math.random() * ((max == null ? 1.5 : max) - min),id);
+		}
 		this.last_onscreen = is_on_screen;
 	}
 	,on_screen: function() {
-		var screen = zero_utilities_Rect.get(0,0,zero_openfl_utilities_Game.get_width(),zero_openfl_utilities_Game.get_height());
+		var screen = zero_utilities_Rect.get(-this.radius,-this.radius,zero_openfl_utilities_Game.get_width() + this.radius * 2,zero_openfl_utilities_Game.get_height() + this.radius * 2);
 		var center = zero_utilities_Vec2.get(zero_openfl_utilities_Game.get_width() / 2,zero_openfl_utilities_Game.get_height() / 2);
 		var pos = zero_utilities_Vec2.get(this.get_x(),this.get_y());
-		var this2 = zero_utilities_Vec2.subtract(pos,zero_utilities_Vec2.from_array_float(center));
-		var out = Math.sqrt(this2[0] * this2[0] + this2[1] * this2[1]) < Math.sqrt(center[0] * center[0] + center[1] * center[1]) + this.radius;
+		var out = screen[1] <= pos[1] && screen[1] + screen[3] >= pos[1] && screen[0] <= pos[0] && screen[0] + screen[2] >= pos[0];
 		zero_utilities_Vec2.pool.push(center);
 		center = null;
 		zero_utilities_Vec2.pool.push(pos);
@@ -75086,6 +75100,9 @@ zero_openfl_utilities_Scene.prototype = $extend(openfl_display_Sprite.prototype,
 });
 var scenes_Stage = function() {
 	this.playing = false;
+	this.start_sound = new Howl({ src : ["assets/disc_spawn.mp3"], volume : 0.25});
+	this.body_hit = new Howl({ src : ["assets/body_hit.mp3"], volume : 1});
+	this.metal_hit = new Howl({ src : ["assets/metal_hit.mp3"], volume : 0.4});
 	this.music_rate = 1;
 	this.new_record = false;
 	this.touch_last = zero_utilities_Vec2.get();
@@ -75102,7 +75119,12 @@ var scenes_Stage = function() {
 	this.addChild(this.blood = new objects_Blood());
 	this.init_timer();
 	this.init_menu();
+	this.addChild(new ui_Transition());
 	zero_utilities_EventBus.listen($bind(this,this.update),"update");
+	this.music = new Howl({ src : ["assets/music.mp3"], loop : true});
+	this.music_id = this.music.play(0);
+	this.music.rate(0.5,this.music_id);
+	this.music.volume(0.75);
 };
 $hxClasses["scenes.Stage"] = scenes_Stage;
 scenes_Stage.__name__ = "scenes.Stage";
@@ -75122,6 +75144,9 @@ scenes_Stage.prototype = $extend(zero_openfl_utilities_Scene.prototype,{
 	,music: null
 	,music_id: null
 	,music_rate: null
+	,metal_hit: null
+	,body_hit: null
+	,start_sound: null
 	,set_music_rate: function(v) {
 		if(this.music == null) {
 			return v;
@@ -75224,9 +75249,9 @@ scenes_Stage.prototype = $extend(zero_openfl_utilities_Scene.prototype,{
 		if(this.music == null) {
 			this.music = new Howl({ src : ["assets/music.mp3"], loop : true});
 			this.music_id = this.music.play(0);
-			this.music.volume(0.6);
+			this.music.volume(1);
 		} else {
-			this.music.fade(0.05,0.6,250,this.music_id);
+			this.music.fade(0.75,1,250,this.music_id);
 			zero_utilities_Tween.get(this).from_to("music_rate",0.5,1).duration(0.25);
 		}
 	}
@@ -75314,6 +75339,13 @@ scenes_Stage.prototype = $extend(zero_openfl_utilities_Scene.prototype,{
 				zero_utilities_Vec2.pool.push(tangent);
 				tangent = null;
 				disc.bounced = true;
+				var id = this.metal_hit.play();
+				var min = 0.5;
+				var max = null;
+				if(min == null) {
+					min = 0;
+				}
+				this.metal_hit.rate(min + Math.random() * ((max == null ? 1 : max) - min),id);
 			}
 			zero_utilities_Vec2.pool.push(v1);
 			v1 = null;
@@ -75346,10 +75378,17 @@ scenes_Stage.prototype = $extend(zero_openfl_utilities_Scene.prototype,{
 		var _gthis = this;
 		disc.hit();
 		if(util_GameState.best < this.accumulator) {
-			util_GameState.best = this.accumulator;
+			util_GameState.set_best(this.accumulator);
 			this.new_record = true;
 		}
-		this.music.fade(0.6,0.1,250,this.music_id);
+		var id = this.body_hit.play();
+		var min = 0.75;
+		var max = null;
+		if(min == null) {
+			min = 0;
+		}
+		this.body_hit.rate(min + Math.random() * ((max == null ? 1.25 : max) - min),id);
+		this.music.fade(1,0.75,250,this.music_id);
 		zero_utilities_Tween.get(this).from_to("music_rate",1,0.5).duration(0.25);
 		this.last.set_text(this.format_time(this.accumulator));
 		this.update_best();
@@ -75472,6 +75511,51 @@ scenes_Stage.prototype = $extend(zero_openfl_utilities_Scene.prototype,{
 	}
 	,__class__: scenes_Stage
 	,__properties__: $extend(zero_openfl_utilities_Scene.prototype.__properties__,{set_music_rate:"set_music_rate"})
+});
+var scenes_Title = function() {
+	this.start_sound = new Howl({ src : ["assets/begin.mp3"], volume : 0.4});
+	this.rot_amt = 0;
+	this.spin = false;
+	var _gthis = this;
+	var this1 = zero_utilities_Color.BLACK;
+	zero_openfl_utilities_Game.root.stage.set_color((Math.round(this1[0] * 255) & 255) << 16 | (Math.round(this1[1] * 255) & 255) << 8 | Math.round(this1[2] * 255) & 255);
+	zero_openfl_utilities_Scene.call(this);
+	this.addEventListener("click",function(e) {
+		zero_utilities_Tween.get(_gthis.logo).prop({ scaleX : 0, scaleY : 0}).duration(0.25).ease(zero_utilities_Ease.backIn).on_complete(function() {
+			zero_utilities_Timer.get(1.77,function() {
+				zero_openfl_utilities_Game.i.change_scene(new scenes_Stage());
+			});
+		});
+		_gthis.start_sound.play();
+	});
+	this.logo = zero_openfl_extensions_SpriteTools.center(zero_openfl_extensions_SpriteTools.load_graphic(new openfl_display_Sprite(),"assets/logo.png",zero_utilities_Anchor.MIDDLE_CENTER,true));
+	this.addChild(this.logo);
+	this.logo.addEventListener("mouseOver",function(e) {
+		_gthis.spin = true;
+	});
+	this.logo.addEventListener("mouseOut",function(e) {
+		_gthis.spin = false;
+	});
+	zero_utilities_EventBus.listen($bind(this,this.update),"update");
+	var hi = window.localStorage.getItem("hiscore");
+	if(hi != null) {
+		util_GameState.set_best(parseFloat(hi));
+	}
+};
+$hxClasses["scenes.Title"] = scenes_Title;
+scenes_Title.__name__ = "scenes.Title";
+scenes_Title.__super__ = zero_openfl_utilities_Scene;
+scenes_Title.prototype = $extend(zero_openfl_utilities_Scene.prototype,{
+	logo: null
+	,spin: null
+	,rot_amt: null
+	,start_sound: null
+	,update: function(dt) {
+		this.rot_amt += ((this.spin ? 90 : 2) - this.rot_amt) * 0.01;
+		var _g = this.logo;
+		_g.set_rotation(_g.get_rotation() + (this.logo.get_rotation() + this.rot_amt - this.logo.get_rotation()) * 0.2);
+	}
+	,__class__: scenes_Title
 });
 var ui_BestTime = function() {
 	openfl_display_Sprite.call(this);
@@ -75760,6 +75844,28 @@ ui_PlayPrompt.prototype = $extend(openfl_display_Sprite.prototype,{
 	,__class__: ui_PlayPrompt
 	,__properties__: $extend(openfl_display_Sprite.prototype.__properties__,{set_progress:"set_progress"})
 });
+var ui_Transition = function() {
+	openfl_display_Sprite.call(this);
+	var _g = 0;
+	while(_g < 16) {
+		var i = _g++;
+		var sprite = new openfl_display_Sprite();
+		var color = zero_utilities_Color.BLACK;
+		var y = i * 45.;
+		sprite.get_graphics().beginFill((Math.round(color[0] * 255) & 255) << 16 | (Math.round(color[1] * 255) & 255) << 8 | Math.round(color[2] * 255) & 255,color[3]);
+		sprite.get_graphics().drawRect(0,y,1280,90.);
+		sprite.get_graphics().endFill();
+		var bar = sprite;
+		zero_utilities_Tween.get(bar).from_to("x",0,1280).ease(zero_utilities_Ease.quadOut).delay(i * 0.05).duration(0.25);
+		this.addChild(bar);
+	}
+};
+$hxClasses["ui.Transition"] = ui_Transition;
+ui_Transition.__name__ = "ui.Transition";
+ui_Transition.__super__ = openfl_display_Sprite;
+ui_Transition.prototype = $extend(openfl_display_Sprite.prototype,{
+	__class__: ui_Transition
+});
 var util_DiscSpawner = function(scene) {
 	this.rest_period = 0;
 	this.period = 2;
@@ -75854,6 +75960,11 @@ util_DiscSpawner.prototype = {
 var util_GameState = function() { };
 $hxClasses["util.GameState"] = util_GameState;
 util_GameState.__name__ = "util.GameState";
+util_GameState.__properties__ = {set_best:"set_best"};
+util_GameState.set_best = function(n) {
+	window.localStorage.setItem("hiscore","" + n);
+	return util_GameState.best = n;
+};
 var util_UpdateManager = function() { };
 $hxClasses["util.UpdateManager"] = util_UpdateManager;
 util_UpdateManager.__name__ = "util.UpdateManager";
