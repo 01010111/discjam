@@ -95,7 +95,10 @@ class Stage extends Scene {
 	}
 
 	function init_controls() {
-		addEventListener(MouseEvent.MOUSE_WHEEL, (e) -> rotate(e.delta.sign_of() * 15));
+		addEventListener(MouseEvent.MOUSE_WHEEL, (e) -> {
+			e.preventDefault();
+			rotate(e.delta.sign_of() * 15);
+		});
 		addEventListener(TouchEvent.TOUCH_BEGIN, (e) -> {
 			var p = new Point(e.localX, e.localY);
 			p = (cast e.target:Sprite).localToGlobal(p);
